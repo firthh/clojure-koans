@@ -42,6 +42,6 @@
 
   "All together now!"
   (= "Test Testerson, 123 Test Lane, Testerville, TX"
-     ((fn [[f-name l-name] address]
-      (format "%s %s, %s, %s, %s" f-name l-name (:street-address address) (:city address) (:state address)))
+     ((fn [[f-name l-name] {:keys [street-address city state]}]
+      (format "%s %s, %s, %s, %s" f-name l-name street-address city state))
        ["Test" "Testerson"] test-address)))
